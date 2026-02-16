@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Confirm deletion of account</h1>
+<h3>Warning, this action cannot be undone</h3>
+
+<a href="{{url_for('delete2')}}" class="small_link">Yes, delete my account</a>
+
+<a href="{{url_for('account')}}" class="small_link">No, go back</a>
+
+
+
+{% endblock %}

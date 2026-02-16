@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>PlanMyStay</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css.css')}}" />
+
+    </head>
+    <body>
+        <nav>
+            <h3>PlanMyStay</h3>
+            <ul>
+                <li><a href="{{url_for('index')}}">HOME</a></li>
+                <li><a href="{{url_for('account')}}">ACCOUNT</a></li>
+                <li><a href="{{url_for('activities')}}">BOOK NOW</a></li>
+                <li><a href="{{url_for('faved_activities')}}">MY FAVOURITES</a></li>
+                <li><a href="{{url_for('booked_activities')}}">MY BOOKINGS</a></li>
+                <li><a href="{{url_for('login')}}">LOGIN</a></li>
+                
+                <li><a href="{{url_for('add_review')}}">LEAVE A REVIEW</a></li>
+                <!-- if u wanted to do logout, do if session, <td>logout</td> endif and pass session into this page -->
+            </ul>
+        </nav>
+        <section>
+
+
+        {% block main_content %} {% endblock %}
+
+        </section>
+
+        <footer>
+            <small>Website by Chrysanthi Mouzakitis 2023</small>
+        </footer>
+
+    </body>
+</html>

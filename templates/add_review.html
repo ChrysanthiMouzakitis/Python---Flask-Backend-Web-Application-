@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action = "" method = "post" novalidate>
+
+    {{ form.hidden_tag() }}
+
+    {{ form.activity_name.label }}
+    {{ form.activity_name() }}
+    {% for error in form.activity_name.errors %}
+        {{error}}
+    {% endfor %}
+
+    <br/>
+    <br/>
+
+    {{ form.stars.label }}
+    {{ form.stars() }}
+    {% for error in form.stars.errors %}
+        {{error}}
+    {% endfor %}
+
+    <br/>
+    <br/>
+
+    {{ form.review.label }}
+    {{ form.review() }}
+    {% for error in form.review.errors %}
+        {{error}}
+    {% endfor %}
+
+    {{form.submit()}}
+    
+    {{note}}
+</form>
+
+
+
+
+{% endblock %}

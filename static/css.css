@@ -1,0 +1,203 @@
+body{
+    text-align: center;
+}
+
+h1{
+    font-size: 2em;
+}
+nav{
+    margin: 0;
+    padding:1em;
+    background-color: #59b076;
+    color: #fff;
+    font-family: 'Times New Roman';
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    position:sticky;
+    top:0;
+    left:0;
+ 
+}
+
+
+
+ li a {
+    color: white;
+    border-radius: 0;
+    display: inline-block;
+    border-left: 0.1em solid white;
+    padding: 0.1em;
+    margin:1em;
+}
+
+#links a{
+    
+    padding: 1.5em;
+    border: .1em solid #59b076;
+    border-radius: 2em;
+    margin:3em;
+    text-align: center;
+    font-size:1em;
+}
+
+#links a:hover{
+    background-color: #59b076;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav li{
+    display: inline-block;
+}
+
+ul{
+    display: inline;
+}
+
+a:hover{
+    color: grey;
+}
+
+body{
+    margin: 0;
+}
+section{
+    margin:2em;
+}
+
+form{
+    display: inline;
+}
+
+table{
+    border-collapse: collapse;
+    margin:auto; 
+    text-align: center;
+    
+}
+
+td, th{
+    border: .2em solid grey;
+    padding: 0.5em;
+    margin: 0.5em;
+    padding:2em;
+
+}
+
+.alert{
+    color:red;
+    text-decoration: underline;
+}
+
+.review td, .review th{
+
+    width:30%;
+    padding:0.5em;
+    
+}
+.review tr{
+    margin:0.1em;
+    
+    
+}
+
+.review{
+    width: 100%;
+    
+}
+
+
+
+section img{
+    width:50%;
+    margin:0;
+    padding:0;
+}
+
+footer{
+    background-color: #59b076;
+    color: white;
+}
+
+#activity{
+    text-align: center;
+}
+
+#activity img, #loop section{
+    border: 1em solid #59b076;
+    width:50%;
+}
+
+#activity table{
+    text-align: center;
+    width:50%;
+    margin: auto;
+    
+}
+
+#activity h1{
+    font-size: 2em;
+}
+
+#activities{
+    text-align: left;
+   
+}
+
+#activities img {
+    width:100%;
+    
+}
+
+#loop h1{
+    font-size: 1.25em;
+    
+}
+#loop{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#loop section{
+    width:40%;
+    text-align: center;
+    margin: 1em auto;
+}
+
+.stand_out{
+    color:#316041;
+    border:0.2em solid #59b076;
+    display: inline;
+    padding:0.5em;
+    margin:0.5em;
+    
+}
+.small_link{
+    text-decoration: underline;
+}
+
+a{
+    display:block;
+    color:black;
+}
+
+form{
+    list-style:none;
+}
+
+#act{
+
+    border: .1em solid #59b076;
+    width:26%;
+    padding:1em;
+
+}
+
+aside{
+    display:flex;
+    flex-wrap: wrap;
+}

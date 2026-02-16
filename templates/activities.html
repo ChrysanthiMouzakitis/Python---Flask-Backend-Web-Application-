@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="activities">
+<h1>All of the available activities</h1>
+
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    {{ form.filter.label}}
+    {{ form.filter()}}
+    <br/>
+
+    {{ form.time_filter.label}}
+    <br/>
+    <br/>
+    {{ form.time_filter()}}
+    {% for error in form.time_filter.errors%}
+    {{error}}
+    {% endfor%}
+    <br/>
+    <br/>
+    {{form.submit()}}
+</form>
+
+<h3>NOTE:</h3>
+<p>Each price is price per adult, the children's prices are half of the adult prices, total price is calculated at booking</p>
+
+<br/>
+
+{{note}}
+
+<section id="loop">
+{% if activities%}
+
+    {% for x in activities %}
+    
+
+    <section>
+        <img src="../static/{{x['image']}}"/>
+        <h1>{{x["name"]}}</h1>
+        <h1>{{x["date"]}}</h1>
+        <p>£ {{x["pricenote"]}}</p>
+        <a href="{{url_for('activity', activity_id=x['activity_id'])}}" class="small_link">See More</a>
+        <br/>
+        <br/>
+        <a href="{{url_for('book_activity', activity_id=x['activity_id'])}} " class="stand_out">Book now</a>
+        
+        <a href="{{url_for('fav_activity', activity_id=x['activity_id'])}}" class="stand_out">Add to Favourites</a>
+        <br/>
+        <br/>
+
+    </section>
+    {% endfor %}
+
+{%endif%}
+
+</section>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<section id="activity">
+<img src="../static/{{activity['image']}}" alt="a big picture of {{activity['name']}}"/>
+<h1>{{activity["name"]}}</h1>
+<!-- add an image or someting -->
+<table>
+    
+    <tr>
+        <th>Price</th>
+        <th>County</th>
+        <th>Category</th>
+    </tr>
+    <tr>
+        <td>£ {{activity["pricenote"]}}</td>
+        <td>{{activity["county"]}}</td>
+        <td>{{activity["category"]}}</td>
+        
+    </tr>
+</table>
+<br/>
+        
+
+<p>{{activity["description"]}}</p>
+<br/>
+        
+<a href="{{url_for('book_activity', activity_id=activity['activity_id'])}}" class="small_link">BOOK NOW</a>
+<br/>
+<a href="{{url_for('fav_activity', activity_id=activity['activity_id'])}}" class="small_link">ADD TO FAVOURITES</a>
+
+<h3 >See Similar</h3>
+
+<aside>
+{% for act in other_activities %}
+<section id = "act">
+
+<img src="../static/{{act['image']}}"/>
+<h3>{{act["name"]}}</h3>
+<p>{{act["category"]}}</p>
+<p>£ {{act["pricenote"]}}</p>
+<a href="{{url_for('activity', activity_id=act['activity_id'])}}" class="small_link">See More</a>
+
+
+
+</section>
+
+
+{% endfor %}
+</aside>
+
+
+
+
+</section>
+
+
+
+
+{% endblock %}

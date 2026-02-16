@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Your holiday plan to date!</h1>
+
+{% if cart %}
+
+    <table>
+        <tr>
+            <th>Date</th>
+            
+            <th>Event</th>
+            <th>Number of adults booked for</th>
+            <th>Number of children booked for</th>
+            <th colspan="2"></th>
+            <th>Price</th>
+        </tr>
+
+        {%for activity_id in cart %}
+            <tr>
+                <!-- <td>{{cart[activity_id]}}</td> -->
+                <td rowspan="2">{{dates[activity_id]}}</td>
+                
+                
+                <td rowspan="2"><a href="{{url_for('activity', activity_id=activity_id)}}">{{names[activity_id]}}</a></td>
+                <td rowspan="1">{{cart[activity_id][0]}}</td>
+                <td rowspan="1">{{cart[activity_id][1]}}</td>
+                
+                <td rowspan="2"><a href="{{url_for('move_to_favs', activity_id=activity_id)}}" class="small_link">Move to Favourites</a></td>
+                <td rowspan="2"><a href="{{url_for('remove_cart', activity_id=activity_id)}}" class="alert">Cancel Booking</a></td>
+                <td rowspan="2">£ {{costs[activity_id]}}</td>
+
+                
+            </tr>
+
+            <tr>
+                <td colspan="2"><a href="{{url_for('edit_people', activity_id=activity_id)}}" class="small_link">Edit</a></td>
+
+            </tr>
+            
+        {% endfor %}
+        <tr>
+            <td colspan="6">TOTAL COST</td>
+            
+            <td>£ {{total}}</td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    
+
+    <a href="{{url_for('activities')}}" class="small_link">Click here to explore more!</a>
+
+
+    <h1>{{alert}}</h1>
+    <br/>
+    
+<br/>
+
+    
+
+
+{%else%}
+
+    <h3>Oops! looks like you have no booked activities at the moment</h3>
+    <a href="{{url_for('activities')}}" class="small_link">Click here to explore your options</a>
+{% endif %}
+
+{{note}}
+
+{% endblock %}

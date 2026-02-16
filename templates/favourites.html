@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Your saved activities to date!</h1>
+
+{% if favs %}
+
+    <table>
+        {%for activity_id in favs %}
+            <tr>
+                <td>{{favs[activity_id]}}</td>
+                
+                <td>{{names[activity_id]}}</td>
+                <td> <a href ="{{url_for('move_to_cart', activity_id=ids[activity_id])}}" class="small_link" >Move to Booked Activities</a></td>
+                <td><a href="{{url_for('remove_fav', activity_id=activity_id)}}" class="alert">Remove</a></td>
+                
+                
+            </tr>
+        {% endfor %}
+    </table>
+    <br/>
+    <br/>
+
+    <a href="{{url_for('activities')}}" class="small_link">Click here to explore more!</a>
+
+
+{%else%}
+
+    <h3>Oops! looks like you have no saved activities at the moment</h3>
+    <a href="{{url_for('activities')}}" class="small_link">Click here to explore your options</a>
+{% endif %}
+
+{{note}}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Oops</h1>
+
+<p>Looks like this activity is already in your planner!
+    To change the details or cancel the booking please visit the my bookings page <a href="{{url_for('booked_activities')}}" class="small_link">here</a> or 
+    book another activity <a href="{{url_for('activities')}}" class="small_link">here</a>
+</p>
+
+
+{% endblock %}

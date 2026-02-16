@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>My Account</h1>
+
+<h3>Welcome {{user_id}}</h3>
+
+<a href="{{url_for('add_review')}}">Add a review</a>
+<br/>
+<a href="{{url_for('booked_activities')}}">My Booked Activities</a>
+<br/>
+<a href="{{url_for('faved_activities')}}">My Favourites</a>
+<br/>
+<a href="{{url_for('change_password')}}">Change password</a>
+<br/>
+<a href="{{url_for('logout')}}">Logout</a>
+<br/>
+<a href="{{url_for('delete1')}}" class="alert">Delete Account</a>
+<br/>
+<a  href="{{url_for('admin_acts')}}">Special admin Features</a>
+
+
+
+{% endblock %}

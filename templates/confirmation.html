@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Confirm booking details</h1>
+
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    {{ form.num_people1.label}}
+    <br/>
+    <br/>
+    {{ form.num_people1()}}
+    <br/>
+    <br/>
+    {{ form.num_people2.label}}
+    <br/>
+    <br/>
+    {{ form.num_people2()}}
+    <br/>
+    <br/>
+
+    {{form.submit()}}
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>PlanMyStay</h1>
+
+<h3>Welcome {{user_id}}!</h3>
+
+<p>Plan your perfect Irish holiday!</p>
+
+<section id="links">
+
+<a href="{{url_for('register')}}">Register</a>
+<a href="{{url_for('activities')}}" class="important">Find Bookings</a>
+
+<a href="{{url_for('booked_activities')}}">My bookings</a>
+
+
+
+</section>
+
+<h3>Reviews of popular activities</h3>
+
+<section>
+    {% for x in reviews%}
+    <table class="review">
+        <tr>
+            <th>{{x["activity_name"]}}</th>
+            <td>{{x["user_id"]}}</td>
+            <td>{{x["review"]}}</td>
+        </tr>
+    </table>
+    {%endfor%}
+    <a href="{{url_for('reviews')}}" class="small_link">Click to see all reviews</a>
+</section>
+
+<!-- <p>&#10029;</p> -->
+
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+
+
+<h1>ALL REVIEWS</h1>
+
+<form action="" method="post" novalidate >
+    {{form.hidden_tag()}}
+    {{ form.filter.label}}
+    {{ form.filter()}}
+    <br/>
+    <br/>
+    {{form.submit()}}
+</form>
+
+
+{%for x in reviews%}
+<table class="review">
+    
+    <tr>
+        <td><a href="{{url_for('activity', activity_id=x['activity_id'])}}" class="small_link">Visit this activity</a></td>
+        
+        <th>{{x["activity_name"]}}</th>
+        <td>{{x["user_id"]}}</td>
+        <td>{{x["review"]}}</td>
+        <td>{{x["stars"]}}</td>
+        
+        
+        
+        
+    </tr>
+</table>
+{%endfor%}
+
+
+
+
+
+<h3><a href="{{url_for('add_review')}}" class="small_link">Click here to add a review!</a></h3>
+
+
+
+{% endblock %}
+

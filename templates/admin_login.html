@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <h1>ADMIN LOGIN</h1>
+
+    <form action="" method="post" novalidate>
+        
+        {{ form.hidden_tag() }}
+
+        {{ form.admin_id.label }}
+        {{ form.admin_id() }}
+        {% for error in form.admin_id.errors %}
+            {{error}}
+        {% endfor %}
+
+        
+        <br/>
+        <br/>
+
+        {{ form.code.label }}
+        {{ form.code() }}
+        {% for error in form.code.errors %}
+            {{error}}
+        {% endfor %}
+
+        <br/>
+        <br/>
+
+        {{ form.submit()}}
+
+    </form>
+    <br/>
+    <br/>
+
+    <a href="{{url_for('login')}}" class="small_link">Regular login Here</a>
+
+    
+
+
+
+
+{% endblock %}
